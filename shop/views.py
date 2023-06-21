@@ -13,9 +13,15 @@ def index(request):
         product_objects = product_objects.filter(name__icontains=item_name)
 
     #Pagination feature
-    paginator = Paginator(product_objects,4)
+    paginator = Paginator(product_objects, 4)
     page = request.GET.get('page')
     product_objects = paginator.get_page(page)
 
 
-    return render(request,'shop/index.html',{'product_objects':product_objects})
+    return render(request, 'shop/index.html', {'product_objects':product_objects})
+
+def detail(request, id):
+    product_objects = Product.objects.all()
+    product_object = product_objects.get(id=id)
+
+    return render(request, 'shop/detail.html', {'product_object':product_object})
