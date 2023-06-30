@@ -31,7 +31,7 @@
                   <a class="nav-link" href="#">Features</a>
                 </li>
                 <li class="nav-item">
-                  <button id="cart" type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="Bottom popover">
+                  <button id="cart" type="button" class="btn btn-secondary" data-bs-html="true" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="">
                     Cart(0)
                   </button>
                 </li>
@@ -128,8 +128,17 @@
     localStorage.setItem('cart',JSON.stringify(cart));
     document.getElementById("cart").innerHTML = "Cart(" + Object.keys(cart).length + ")";
   });
-  const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
-  const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+
+  // $(function () {
+    // $('[data-bs-toggle="popover"]').popover();
+    // document.getElementById("cart").setAttribute('data-bs-content', '<h5> Cart </h5>');
+  // });
+
+  const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
+  const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl));
+  document.getElementById("cart").setAttribute("data-bs-content", "<h5> Cart </h5>");
+  // var poopover_cart = document.getElementById("cart")
+  // popover_cart.setContent("<h5> Cart </h5>");
 
 
 
