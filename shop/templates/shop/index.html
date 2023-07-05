@@ -152,12 +152,13 @@
       cartString += document.getElementById("nm"+ x).innerHTML + "Qty: " + cart[x] + "</br>";
       cartIndex += 1
     }
-    // document.getElementById("cart").setAttribute('data-bs-content',cartString);
+
+    cartString += "<a href='/checkout'> <button class='btn btn-warning' id='checkout'>Checkout</button></a>";
     const popoverCart = document.getElementById('cart');
     // const popoverList = new bootstrap.Popover(popoverCart);
     // new bootstrap.Popover(popoverCart);
     popoverCart.setAttribute('data-bs-content', cartString)
-    const popoverList = new bootstrap.Popover(popoverCart);
+    new bootstrap.Popover(popoverCart);
     console.log(cart);
   };
 
