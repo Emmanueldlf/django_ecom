@@ -32,7 +32,7 @@ else{
   cart = JSON.parse(localStorage.getItem('cart'));
 }
 for(item in cart) {
-  let name = cart[item];
+  let name = cart[item][1];
   console.log(name)
   let quantity = cart[item][0];
 
