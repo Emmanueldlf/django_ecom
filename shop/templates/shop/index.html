@@ -156,9 +156,10 @@
       cartString += cartIndex + " "
       cartString += document.getElementById("nm"+ x).innerHTML + " Qty: " + cart[x][0] + "</br>";
       cartIndex += 1
+      // cartString += "<a href='/checkout'><button class='btn btn-warning' id='checkout'>Checkout</button></a>";
     }
 
-    cartString += "<a href='/checkout'> <button class='btn btn-warning' id='checkout'>Checkout</button></a>";
+    cartString += "<a class='btn btn-warning' href='/checkout' id='checkout'>Checkout</a>";
     const popoverCart = document.getElementById('cart');
     // const popoverList = new bootstrap.Popover(popoverCart);
     // new bootstrap.Popover(popoverCart);
