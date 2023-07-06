@@ -123,14 +123,16 @@
     else {
       quantity = 1;
       name = document.getElementById("nm" + item_id).innerHTML;
+      console.log(name)
       cart[item_id] = [quantity, name];
 
     }
 
-    console.log(cart);
+    // console.log(cart);
     localStorage.setItem('cart',JSON.stringify(cart));
     document.getElementById("cart").innerHTML = "Cart(" + Object.keys(cart).length + ")";
   });
+  document.getElementById("cart").innerHTML = "Cart(" + Object.keys(cart).length + ")";
 
   // $(function () {
   //   $('[data-bs-toggle="popover"]').popover();
@@ -151,7 +153,7 @@
     cartString += "<h6> Your cart </h6>"
     var cartIndex = 1;
     for(var x in cart){
-      cartString += cartIndex
+      cartString += cartIndex + " "
       cartString += document.getElementById("nm"+ x).innerHTML + " Qty: " + cart[x][0] + "</br>";
       cartIndex += 1
     }
@@ -162,7 +164,7 @@
     // new bootstrap.Popover(popoverCart);
     popoverCart.setAttribute('data-bs-content', cartString)
     new bootstrap.Popover(popoverCart);
-    console.log(cart);
+    // console.log(cart);
   };
 
 
