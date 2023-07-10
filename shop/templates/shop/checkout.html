@@ -23,6 +23,7 @@
       <div class="row">
         <div class="col-md-12">
           <form class="row g-3" method="POST">
+            {% csrf_token %}
             <div class="col-md-6">
               <label for="inputName" class="form-label">Name</label>
               <input type="text" class="form-control" id="Name" name="name" placeholder="John">
