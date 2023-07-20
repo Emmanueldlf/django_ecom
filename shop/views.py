@@ -39,6 +39,6 @@ def checkout(request):
         zip = request.POST.get("zip","")
 
         order = Order(name=name,email=email,address=address,address2=address2,state=state,city=city,zip=zip)
-        order.save
+        order.save()
 
     return render(request,'shop/checkout.html')
