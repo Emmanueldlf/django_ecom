@@ -24,6 +24,7 @@
         <div class="col-md-12">
           <form class="row g-3" method="POST">
             {% csrf_token %}
+              <input type="hidden" id="items" name="items">
             <div class="col-md-6">
               <label for="inputName" class="form-label">Name</label>
               <input type="text" class="form-control" id="Name" name="name" placeholder="John">
@@ -80,6 +81,6 @@ for(item in cart) {
   $('#item_list').append(itemString);
 
 }
-
+$('#items').val(JSON.stringify(cart));
 </script>
 </html>
