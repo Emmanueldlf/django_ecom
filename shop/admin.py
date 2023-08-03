@@ -10,6 +10,7 @@ admin.site.index_title = "Manage Net Shop"
 
 class ProductAdmin(admin.ModelAdmin):
     list_display = ('name','price','discounted_price','category','description','image')
+    search_fields = ('name',)
 
 admin.site.register(Product,ProductAdmin)
 admin.site.register(Order)
